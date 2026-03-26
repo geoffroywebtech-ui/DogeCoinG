@@ -302,7 +302,7 @@ export function PetTabsClient({
                         À venir
                       </p>
                       <div className="space-y-2">
-                        {activeReminders.map((reminder) => (
+                        {activeReminders.map((reminder: Reminder) => (
                           <ReminderRow
                             key={reminder.id}
                             reminder={reminder}
@@ -321,7 +321,7 @@ export function PetTabsClient({
                         Complétés
                       </p>
                       <div className="space-y-2 opacity-60">
-                        {doneReminders.map((reminder) => (
+                        {doneReminders.map((reminder: Reminder) => (
                           <ReminderRow
                             key={reminder.id}
                             reminder={reminder}
