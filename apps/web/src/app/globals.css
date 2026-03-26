@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 22 100% 52%;       /* petoo orange */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 174 72% 38%;     /* teal */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 47 97% 50%;         /* sunshine yellow */
+    --accent-foreground: 240 10% 3.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 22 100% 52%;
+    --radius: 0.75rem;
+    --chart-1: 22 100% 52%;
+    --chart-2: 174 72% 38%;
+    --chart-3: 271 76% 53%;
+    --chart-4: 158 64% 52%;
+    --chart-5: 47 97% 50%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 22 100% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 174 72% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 47 97% 56%;
+    --accent-foreground: 240 10% 3.9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 22 100% 58%;
+    --chart-1: 22 100% 58%;
+    --chart-2: 174 72% 45%;
+    --chart-3: 271 76% 60%;
+    --chart-4: 158 64% 58%;
+    --chart-5: 47 97% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-petoo-500 via-coral-400 to-lavender-500 bg-clip-text text-transparent;
+  }
+  .gradient-text-teal {
+    @apply bg-gradient-to-r from-teal-500 to-mint-500 bg-clip-text text-transparent;
+  }
+
+  /* Fun hero gradient background */
+  .hero-gradient {
+    background: radial-gradient(ellipse at 20% 30%, rgba(255, 90, 13, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 70%, rgba(20, 184, 166, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+  }
+
+  /* Colorful cards */
+  .card-orange { @apply bg-gradient-to-br from-petoo-50 to-petoo-100 border-petoo-200; }
+  .card-teal   { @apply bg-gradient-to-br from-teal-50 to-teal-100 border-teal-200; }
+  .card-purple { @apply bg-gradient-to-br from-lavender-50 to-lavender-100 border-lavender-200; }
+  .card-green  { @apply bg-gradient-to-br from-mint-100 to-green-50 border-green-200; }
+  .card-yellow { @apply bg-gradient-to-br from-sunshine-100 to-yellow-50 border-yellow-200; }
+  .card-pink   { @apply bg-gradient-to-br from-coral-100 to-pink-50 border-pink-200; }
+}
+
+/* Animated paw background for hero */
+.paw-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext y='45' font-size='30' opacity='0.04'%3E🐾%3C/text%3E%3C/svg%3E");
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--muted-foreground) / 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground) / 0.5); }

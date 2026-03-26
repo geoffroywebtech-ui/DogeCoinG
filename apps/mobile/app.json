@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "Petoo",
+    "slug": "petoo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "petoo",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ff5a0d"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.petoo.mobile",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Petoo utilise votre localisation pour trouver des toiletteurs et vétérinaires près de vous.",
+        "NSCameraUsageDescription": "Petoo utilise la caméra pour les photos de votre animal.",
+        "NSPhotoLibraryUsageDescription": "Petoo accède à vos photos pour les profils d'animaux."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ff5a0d"
+      },
+      "package": "app.petoo.mobile",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-notifications",
+      ["expo-location", { "locationAlwaysAndWhenInUsePermission": "Petoo utilise votre localisation pour trouver des pros près de vous." }]
+    ],
+    "extra": {
+      "eas": { "projectId": "your-eas-project-id" }
+    }
+  }
+}
